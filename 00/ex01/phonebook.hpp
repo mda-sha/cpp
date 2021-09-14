@@ -17,14 +17,14 @@ public:
             vasya[lastAdded].set_last_name();
             vasya[lastAdded].set_nickname();
             vasya[lastAdded].set_number();
+            vasya[lastAdded].set_secret();
         }
         
-        void print_data(string str, int len)
+        void print_data(string str)
         {
-            // int len;
+            int len = str.length();
             string new_str = str;
 
-            // len = str::length();
             if (len < 10)
             {
                 int space = 10 - len;
@@ -32,46 +32,45 @@ public:
                     std::cout << " ";
             }
             if (len > 10)
-            {
                 new_str.resize(9);
-                std::cout << new_str << ".";
-            }
             std::cout << " " << new_str;
             if (len > 10)
-                std::cout << new_str << ".";
+                std::cout << ".";
             std::cout << " |";
+        }
+
+        void by_index()
+        {
+            int i;
+            std::cout << "ENTER INDEX ";
+            std::cin >> i;
+            i--;
+            std::cin.ignore(32767, '\n');
+            if (i < 0 || i > 9 || vasya[i].first_name == "0")
+            {
+                std::cout << "INVALID INDEX" << std::endl;
+                return;
+            }
+            std::cout << "FIRST NAME " << vasya[i].first_name << std::endl;
+            std::cout << "LAST NAME " << vasya[i].last_name << std::endl;
+            std::cout << "NICKNAME " << vasya[i].nickname << std::endl;
+            std::cout << "PHONE NUMBER " << vasya[i].phone_number << std::endl;
+            std::cout << "DARKEST SECRET " << vasya[i].darkest_secret << std::endl;
         }
 
         void search()
         {
             int i = 0;
-            int len;
-            std::cout << "     index | first name |  last name |   nickname" << std::endl;
-            while (!vasya[i].first_name.empty() && i < 8)
+            std::cout << "     index | first name |  last name |   nickname |" << std::endl;
+            while (vasya[i].first_name != "0" && i < 8)
             {
-                std::cout << "         " << i << " |";
-                len = (vasya[i].first_name)::length();
-                print_data(vasya[i].first_name, len);
-                len = (vasya[i].last_name)::length();
-                print_data(vasya[i].last_name), len;
-                len = (vasya[i].nickname)::length();
-                print_data(vasya[i].nickname, len);
+                std::cout << "         " << i + 1 << " |";
+                print_data(vasya[i].first_name);
+                print_data(vasya[i].last_name);
+                print_data(vasya[i].nickname);
                 std::cout << std::endl;
+                i++;
             }
-            // std::cout << "ENTER CONTACTS NAME " << std::endl;
-            // string name;
-            // std::getline(std::cin, name);
-            // int i = 0;
-            // while (i < 8)
-            // {
-            //     if (vasya[i].name == name)
-            //     {
-            //         std::cout << vasya[i].number << std::endl;
-            //         break;
-            //     }
-            //     i++;
-            // }
-            // if (i == 8)
-            //     std::cout << "contact not found" << std::endl;
+            by_index();
         }
 };

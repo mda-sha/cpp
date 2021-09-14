@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using std::string;
 
@@ -25,6 +26,11 @@ public:
     {
         std::cout << "NICKNAME ";
         std::getline(std::cin, nickname);
+    }
+    void set_secret()
+    {
+        std::cout << "DARKEST SECRET ";
+        std::getline(std::cin, darkest_secret);
     }
     void set_number()
     {
