@@ -17,6 +17,6 @@ int main()
         else if (!cmd.compare("search"))
             book.search();
         else
-            std::cout << "WRONG COMMAND" << std::endl;
+            std::cout << "WRONG COMMAND" << std::endl; 
     }
 }
