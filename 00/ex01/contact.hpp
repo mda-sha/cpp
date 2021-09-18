@@ -51,28 +51,28 @@ public:
     }
     bool check_if_exists()
     {
-        if (first_name != "0")
+        if (!first_name.empty())
             return true;
         return false;
     }
-        void print_data(std::string str)
-        {
-            int len = str.length();
-            std::string new_str = str;
+    void print_data(std::string str)
+    {
+        int len = str.length();
+        std::string new_str = str;
 
-            if (len < 10)
-            {
-                int space = 10 - len;
-                while (space--)
-                    std::cout << " ";
-            }
-            if (len > 10)
-                new_str.resize(9);
-            std::cout << " " << new_str;
-            if (len > 10)
-                std::cout << ".";
-            std::cout << " |";
+        if (len < 10)
+        {
+            int space = 10 - len;
+            while (space--)
+                std::cout << " ";
         }
+        if (len > 10)
+            new_str.resize(9);
+        std::cout << " " << new_str;
+        if (len > 10)
+            std::cout << ".";
+        std::cout << " |";
+    }
 
     void print_table(int i)
     {
@@ -81,9 +81,5 @@ public:
         print_data(last_name);
         print_data(nickname);
         std::cout << std::endl;
-    }
-    contact()
-    {
-        first_name = "0";
     }
 };

@@ -6,7 +6,7 @@ int main()
     phonebook book;
     std::string cmd;
 
-    while (1)
+    while (!std::cin.eof())
     {
         std::cout << "enter a command (ADD, SEARCH or EXIT) " << std::endl;
         std::getline(std::cin, cmd);
@@ -16,7 +16,7 @@ int main()
             book.add();
         else if (cmd == "search")
             book.search();
-        else
+        else if (!std::cin.eof())
             std::cout << "WRONG COMMAND" << std::endl; 
     }
 }
