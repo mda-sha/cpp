@@ -2,15 +2,16 @@
 #include <string>
 #include <iomanip>
 
-using std::string;
-
 class contact{
+private:
+
+    std::string first_name;
+    std::string last_name;
+    std::string nickname;
+    std::string phone_number;
+    std::string darkest_secret;
+
 public:
-    string first_name;
-    string last_name;
-    string nickname;
-    string phone_number;
-    string darkest_secret;
 
     void set_first_name()
     {
@@ -39,6 +40,47 @@ public:
         std::cin >> buff;
         phone_number = buff;
         std::cin.ignore(32767, '\n');
+    }
+    void print_everithing()
+    {
+        std::cout << "FIRST NAME " << first_name << std::endl;
+        std::cout << "LAST NAME " << last_name << std::endl;
+        std::cout << "NICKNAME " << nickname << std::endl;
+        std::cout << "PHONE NUMBER " << phone_number << std::endl;
+        std::cout << "DARKEST SECRET " << darkest_secret << std::endl;
+    }
+    bool check_if_exists()
+    {
+        if (first_name != "0")
+            return true;
+        return false;
+    }
+        void print_data(std::string str)
+        {
+            int len = str.length();
+            std::string new_str = str;
+
+            if (len < 10)
+            {
+                int space = 10 - len;
+                while (space--)
+                    std::cout << " ";
+            }
+            if (len > 10)
+                new_str.resize(9);
+            std::cout << " " << new_str;
+            if (len > 10)
+                std::cout << ".";
+            std::cout << " |";
+        }
+
+    void print_table(int i)
+    {
+        std::cout << "         " << i + 1 << " |";
+        print_data(first_name);
+        print_data(last_name);
+        print_data(nickname);
+        std::cout << std::endl;
     }
     contact()
     {

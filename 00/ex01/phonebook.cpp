@@ -4,7 +4,7 @@
 int main()
 {
     phonebook book;
-    string cmd;
+    std::string cmd;
 
     while (1)
     {
@@ -14,7 +14,7 @@ int main()
             break;
         else if (cmd == "add")
             book.add();
-        else if (!cmd.compare("search"))
+        else if (cmd == "search")
             book.search();
         else
             std::cout << "WRONG COMMAND" << std::endl; 
