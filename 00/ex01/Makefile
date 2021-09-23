@@ -1,4 +1,4 @@
-CPPFILES = phonebook.cpp
+CPPFILES = contact.cpp phonebook.cpp
 OFILES = $(patsubst %.cpp,%.o,$(CPPFILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
