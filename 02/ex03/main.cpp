@@ -4,6 +4,7 @@
 // #include "bsp.cpp"
 
 int main( void ) {
+
     // Point const A(6.0, 3.0);
     // Point const B(2.0, 6.0);
     // Point const C (8.0, 8.0);
@@ -18,4 +19,5 @@ int main( void ) {
         std::cout << "point is inside" << std::endl;
     else
         std::cout << "point is outside" << std::endl;
+    return 0;
 }

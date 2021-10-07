@@ -1,4 +1,4 @@
-CPPFILES = bsp.cpp Point.cpp Fixed.cpp main.cpp
+CPPFILES = bsp.cpp main.cpp Point.cpp Fixed.cpp 
 OFILES = $(patsubst %.cpp,%.o,$(CPPFILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
