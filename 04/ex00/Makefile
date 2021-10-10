@@ -2,7 +2,7 @@ CPPFILES = Animal.cpp Dog.cpp Cat.cpp main.cpp
 OFILES = $(patsubst %.cpp,%.o,$(CPPFILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -fsanitize=address
 NAME = animals
 
 all:	$(NAME)

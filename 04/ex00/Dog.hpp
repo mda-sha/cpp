@@ -8,8 +8,7 @@ public:
     ~Dog();
     Dog(Dog const &other);
     Dog &operator =(Dog const &other);
-    void makeSound();
+    virtual void makeSound();
 };
-
 
 #endif
