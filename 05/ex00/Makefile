@@ -1,9 +1,9 @@
-CPPFILES = Brain.cpp Animal.cpp Dog.cpp Cat.cpp main.cpp
+CPPFILES = Bureaucrat.cpp main.cpp
 OFILES = $(patsubst %.cpp,%.o,$(CPPFILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
-NAME = animals
+NAME = Bureaucrat
 
 all:	$(NAME)
 

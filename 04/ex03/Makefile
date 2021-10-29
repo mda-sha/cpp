@@ -1,9 +1,9 @@
-CPPFILES = Brain.cpp Animal.cpp Dog.cpp Cat.cpp main.cpp
+CPPFILES = AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp Character.cpp main.cpp
 OFILES = $(patsubst %.cpp,%.o,$(CPPFILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
-NAME = animals
+NAME = materias
 
 all:	$(NAME)
 
